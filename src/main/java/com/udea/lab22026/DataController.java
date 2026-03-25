@@ -11,7 +11,7 @@ import java.util.Locale;
 @RestController
 public class DataController {
 
-    final private String langFormat = "en-US";
+    private static final String langFormat = "en-US";
 
 
     @GetMapping("/")
