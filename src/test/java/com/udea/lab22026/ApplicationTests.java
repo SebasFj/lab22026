@@ -37,7 +37,7 @@ class ApplicationTests {
 	}
 
 	@Test
-	public void testRandomCurrenciesCodeFormat(){
+	void testRandomCurrenciesCodeFormat(){
 		DataController controller = new DataController();
 		JsonNode response = controller.getRandomCurrencies();
 		for(int i=0; i< response.size(); i++){
@@ -48,7 +48,7 @@ class ApplicationTests {
 	}
 
 	@Test
-	public void testRandomNationsPerformance() {
+	void testRandomNationsPerformance() {
 		DataController controller = new DataController();
 		long startTime = System.currentTimeMillis();
 

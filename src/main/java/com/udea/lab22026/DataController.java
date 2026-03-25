@@ -5,12 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.resource.ResourceUrlProvider;
 
 import java.util.Locale;
 
 @RestController
 public class DataController {
+
+    final private String langFormat = "en-US";
 
 
     @GetMapping("/")
@@ -26,7 +27,7 @@ public class DataController {
     @GetMapping("/nations")
     public JsonNode getRandomNations() {
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(langFormat));
         var nations = objectMapper.createArrayNode();
         for (var i = 0; i < 10; i++) {
             var nation = faker.nation();
@@ -44,7 +45,7 @@ public class DataController {
     @GetMapping("/currencies")
     public JsonNode getRandomCurrencies() {
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(langFormat));
         var currencies = objectMapper.createArrayNode();
         for (var i = 0; i < 10; i++) {
             var currency = faker.currency();
@@ -62,7 +63,7 @@ public class DataController {
     @GetMapping("/aviation")
     public JsonNode getRandomAviation() {
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(langFormat));
         var aviations = objectMapper.createArrayNode();
         for (var i = 0; i < 10; i++) {
             var aviation = faker.aviation();
